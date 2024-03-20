@@ -11,13 +11,14 @@ import sys
 import getpass
 import execjs
 import platform
-import pytesseract
-from LEGACY.main import start
+# import pytesseract
+# from LEGACY.main import start
+from main import start
 from PIL import Image
 from lxml import etree
 
 mainurl = 'https://portal1.ecnu.edu.cn/cas/login?service=http%3A%2F%2Fapplicationnewjw.ecnu.edu.cn%2Feams%2Fhome.action'
-tabelurl = 'http://applicationnewjw.ecnu.edu.cn/eams/courseTableForStd!courseTable.action'
+tabelurl = 'https://applicationnewjw.ecnu.edu.cn/eams/courseTableForStd!courseTable.action'
 idsurl = 'http://applicationnewjw.ecnu.edu.cn/eams/courseTableForStd!index.action'
 headers = {
 	'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36',
@@ -34,11 +35,11 @@ def GetCode():
 	imgraw = s.get(captachaurl)
 	with open(sys.path[0] + '/data/temp.jpg', 'wb+') as f:
 		f.write(imgraw.content)
-	# OpenFile(sys.path[0] + '/data/temp.jpg')
-	# captacha = input('请输入验证码：')
-	print('正在识别验证码...')
-	img = Image.open(sys.path[0] + '/data/temp.jpg')
-	captacha = pytesseract.image_to_string(img)
+	OpenFile(sys.path[0] + '/data/temp.jpg')
+	captacha = input('请输入验证码：')
+	# print('正在识别验证码...')
+	# img = Image.open(sys.path[0] + '/data/temp.jpg')
+	# captacha = pytesseract.image_to_string(img)
 	return captacha
 
 # 老版本里没有用的函数
@@ -145,6 +146,7 @@ def TableSolver():
 	tablePostData = {'ignoreHead': 1,
                   'setting.kind': 'std',
                   'startWeek': 1,
+				  'project.id':2,
                   'semester.id': GetSemesterID(),
                   'ids': ids}
 	semesterIDs = [705, 737, 769]
@@ -199,11 +201,14 @@ def TableSolver():
 		temp = []
 		temp.extend(re.findall(r'"([^"]+)"', one[0]))
 		del temp[4], temp[2], temp[0]
+		print('breakpoint_1',temp)
 		weekData = WeekProcessor(temp[3])
 		del temp[3]
 		temp.extend(weekData)
+		print('breakpoint_2',temp)
 		temp.extend(one[1])
 		processed.append(temp)
+		print('breakpoint_3',temp)
 		print(temp[1])
 	return processed
 
@@ -238,13 +243,9 @@ def WeekProcessor(raw):
 	return [begin, end, typeFlag]
 	pass
 
-	return weekData
-
-
-
 def DumpJson(classList):
 	classInfo = {'classInfo': []}
-	with open(sys.path[0] + '/conf_classTime.json', 'r') as f:
+	with open(sys.path[0] + '/conf_classTime.json', 'r', encoding='utf-8') as f:
 		classTime = json.load(f)
 	classTimes = []
 	# 获取 conf_classTime.json 中的配置文件，并和 classList 的配置匹配
@@ -269,7 +270,7 @@ def DumpJson(classList):
                     'classTime': classTimes.index(aClass[7]) + 1,
                     'classroom': aClass[2]}
 		classInfo['classInfo'].append(classData)
-	with open(sys.path[0] + '/conf_classInfo.json', 'w+', encoding='utf8') as f:
+	with open(sys.path[0] + '/conf_classInfo.json', 'w+', encoding='utf-8') as f:
 		json.dump(classInfo, f, indent=4, ensure_ascii=False)
 	pass
 

@@ -1,0 +1,191 @@
+{
+    "classInfo": [
+        {
+            "className": "代数学II",
+            "week": {
+                "startWeek": 1,
+                "endWeek": 17
+            },
+            "weekday": 4,
+            "weeks": 3,
+            "classTime": 8,
+            "classroom": "闵四教229"
+        },
+        {
+            "className": "基础物理II",
+            "week": {
+                "startWeek": 1,
+                "endWeek": 17
+            },
+            "weekday": 1,
+            "weeks": 3,
+            "classTime": 7,
+            "classroom": "闵四教323"
+        },
+        {
+            "className": "基础物理II",
+            "week": {
+                "startWeek": 1,
+                "endWeek": 17
+            },
+            "weekday": 3,
+            "weeks": 3,
+            "classTime": 2,
+            "classroom": "闵四教323"
+        },
+        {
+            "className": "拓扑学（H）",
+            "week": {
+                "startWeek": 1,
+                "endWeek": 17
+            },
+            "weekday": 1,
+            "weeks": 3,
+            "classTime": 2,
+            "classroom": "闵四教229"
+        },
+        {
+            "className": "拓扑学（H）",
+            "week": {
+                "startWeek": 1,
+                "endWeek": 17
+            },
+            "weekday": 3,
+            "weeks": 3,
+            "classTime": 1,
+            "classroom": "闵四教229"
+        },
+        {
+            "className": "实分析（H）",
+            "week": {
+                "startWeek": 1,
+                "endWeek": 17
+            },
+            "weekday": 2,
+            "weeks": 3,
+            "classTime": 2,
+            "classroom": "闵四教214"
+        },
+        {
+            "className": "实分析（H）",
+            "week": {
+                "startWeek": 1,
+                "endWeek": 17
+            },
+            "weekday": 4,
+            "weeks": 3,
+            "classTime": 1,
+            "classroom": "闵四教214"
+        },
+        {
+            "className": "概率统计初步（H）",
+            "week": {
+                "startWeek": 1,
+                "endWeek": 17
+            },
+            "weekday": 2,
+            "weeks": 3,
+            "classTime": 1,
+            "classroom": "闵四教214"
+        },
+        {
+            "className": "概率统计初步（H）",
+            "week": {
+                "startWeek": 1,
+                "endWeek": 17
+            },
+            "weekday": 4,
+            "weeks": 3,
+            "classTime": 2,
+            "classroom": "闵四教214"
+        },
+        {
+            "className": "习近平新时代中国特色社会主义思想概论",
+            "week": {
+                "startWeek": 1,
+                "endWeek": 17
+            },
+            "weekday": 2,
+            "weeks": 3,
+            "classTime": 5,
+            "classroom": "闵一教211"
+        },
+        {
+            "className": "人类学视角下的经济",
+            "week": {
+                "startWeek": 1,
+                "endWeek": 12
+            },
+            "weekday": 3,
+            "weeks": 3,
+            "classTime": 11,
+            "classroom": "闵一教226"
+        },
+        {
+            "className": "计算机综合实践",
+            "week": {
+                "startWeek": 2,
+                "endWeek": 7
+            },
+            "weekday": 3,
+            "weeks": 3,
+            "classTime": 5,
+            "classroom": "闵实验A303"
+        },
+        {
+            "className": "代数讨论班II",
+            "week": {
+                "startWeek": 1,
+                "endWeek": 13
+            },
+            "weekday": 2,
+            "weeks": 1,
+            "classTime": 9,
+            "classroom": "闵四教302"
+        },
+        {
+            "className": "代数讨论班II",
+            "week": {
+                "startWeek": 1,
+                "endWeek": 13
+            },
+            "weekday": 5,
+            "weeks": 3,
+            "classTime": 1,
+            "classroom": "闵四教302"
+        },
+        {
+            "className": "代数讨论班II",
+            "week": {
+                "startWeek": 15,
+                "endWeek": 15
+            },
+            "weekday": 2,
+            "weeks": 1,
+            "classTime": 9,
+            "classroom": "闵四教302"
+        },
+        {
+            "className": "代数讨论班II",
+            "week": {
+                "startWeek": 3,
+                "endWeek": 3
+            },
+            "weekday": 5,
+            "weeks": 1,
+            "classTime": 1,
+            "classroom": "闵四教302"
+        },
+        {
+            "className": "人类思维与学科史论：统计学",
+            "week": {
+                "startWeek": 1,
+                "endWeek": 6
+            },
+            "weekday": 1,
+            "weeks": 3,
+            "classTime": 11,
+            "classroom": "闵一教128"
+        }
+    ]
+}

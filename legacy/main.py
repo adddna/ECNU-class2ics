@@ -9,6 +9,9 @@ from random import Random
 __author__ = 'Xiejiadong'
 __site__ = 'xiejiadong.com'
 
+# 生成的ics文件中的UID
+__user__ = 'ZhangZean'
+
 checkFirstWeekDate = 0
 checkReminder = 1
 
@@ -122,7 +125,7 @@ def classInfoHandle():
 	print("Now running: classInfoHandle()")
 
 def UID_Create():
-	return random_str(20) + "&xiejiadong.com"
+	return random_str(20) + "&" + __user__
 
 
 def CreateTime():
@@ -132,22 +135,22 @@ def CreateTime():
 	DONE_CreatedTime = date + "Z"
 	# 生成 UID
 	# global DONE_EventUID
-	# DONE_EventUID = random_str(20) + "&xiejiadong.com"
+	# DONE_EventUID = random_str(20) + "&" + __user__
 
 	print("Now running: CreateTime()")
 
 def uniteSetting():
 	# 
 	global DONE_ALARMUID
-	DONE_ALARMUID = random_str(30) + "&xiejiadong.com"
+	DONE_ALARMUID = random_str(30) + "&" + __user__
 	# 
 	global DONE_UnitUID
-	DONE_UnitUID = random_str(20) + "&xiejiadong.com"
+	DONE_UnitUID = random_str(20) + "&" + __user__
 	print("Now running: uniteSetting()")
 
 def setClassTime():
 	data = []
-	with open(sys.path[0] + '/conf_classTime.json', 'r') as f:
+	with open(sys.path[0] + '/conf_classTime.json', 'r', encoding='utf-8') as f:
 		data = json.load(f)
 	global classTimeList
 	classTimeList = data["classTime"]
@@ -155,7 +158,7 @@ def setClassTime():
 	
 def setClassInfo():
 	data = []
-	with open(sys.path[0] + '/conf_classInfo.json', 'r') as f:
+	with open(sys.path[0] + '/conf_classInfo.json', 'r', encoding='utf-8') as f:
 		data = json.load(f)
 	global classInfoList
 	classInfoList = data["classInfo"]
