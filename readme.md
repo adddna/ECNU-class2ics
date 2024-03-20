@@ -1,6 +1,8 @@
 # ECNU-class2ics
 
-基于原项目：(https://github.com/billchen2k/ECNU-class2ics)做了一些修改，使其能在2024年的window系统中使用。
+基于原项目：(https://github.com/billchen2k/ECNU-class2ics)
+
+做了一些修改，使其能在2024年的window系统中使用。
 
 ## What's this
 
@@ -23,7 +25,7 @@ pip install requests
 pip install pyexecjs
 ```
 
-如果需要自动识别验证码，需要安装pytesseract并
+如果需要自动识别验证码，需要安装pytesseract，并且
 
 ```
 pip install pytesseract
