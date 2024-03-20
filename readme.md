@@ -1,13 +1,10 @@
 # ECNU-class2ics
 
-进入网站 👉 [https://class2ics.billc.io](https://class2ics.billc.io) 即可使用。
+基于原项目：(https://github.com/billchen2k/ECNU-class2ics)做了一些修改，使其能在2024年的window系统中使用。
 
 ## What's this
 
-ics 是最流行的日历文件之一，受到几乎所有日历软件的支持。这个程序能根据指定的提醒策略，将高校的课程表信息生成一个可以导入到各个日历软件的 ics 文件。
-![2020-05-29-ZZtweS](https://billc.oss-cn-shanghai.aliyuncs.com/img/2020-05-29-ZZtweS.jpg)
-
-此外，如果你是 iOS 用户，可以试试由 @JJAYCHEN 开发的 iOS 捷径，也许可以解决一些本工具无法解决的特殊情况：[https://github.com/JJAYCHEN1e/ECNU_Bring-Your-Timetable-to-Calendar-App](https://github.com/JJAYCHEN1e/ECNU_Bring-Your-Timetable-to-Calendar-App)
+这个程序可以帮助你获取ECNU教务网上的课表信息，并保存成在大多数日历软件中流行使用的ics格式。
 
 ## Why we made this
 
@@ -16,34 +13,30 @@ ics 是最流行的日历文件之一，受到几乎所有日历软件的支持�
 - 对于 iOS 和 macOS，系统会自动为你查找上课地点并接入苹果地图。
 - 不想每学期都手动添加。~~（懒）~~
   
-## How to deploy this
+## Dependencies
 
-基于 flask + apache2，依赖以下库：
+依赖以下python库：
 
 ```
-sudo apt-get install tesseract-ocr nodejs
-sudo apt-get install python3-pip libapache2-mod-wsgi-py3 python-dev
-pip3 install flask lxml request pillow pyexecjs pytesseract
+pip install lxml
+pip install requests
+pip install pyexecjs
 ```
 
+如果需要自动识别验证码，需要安装pytesseract并
+
+```
+pip install pytesseract
+```
 如果运行的时候还缺了什么，请 pip / pip3 上。
 
-此外，使用 python 命令行交互获取课程表的 python 脚本可以在 `legacy(deprecated)` 目录下找到。以下是使用教程：
+## How to use
 
-> - 对于华东师范大学的学生，程序可以自行登陆公共数据库获取本学期的课表信息。请先后运行 crawller.py （用于获取课程 json）和 main.py （用于生成 ics 文件）。
->  
-> - 对于其他高校的学生，请先在`conf_classTime.json`中配置每节课的启示时间，然后手动填写`classinfo.xlsx`。具体操作可以参照文末的[官方文档]("http://xiejiadong.com/?p=419")。（crawller.py 仅支持华东师范大学教务系统）
->
-> 最后生成的文件为同目录下的 class.ics。你可以用他来干些快乐的事情。
+运行legacy目录下的crawller.py文件，按照命令行提示操作即可。
 
-## About this
+## Old Contributors
 
 Contributor|Website
 ---|---
 Bill Chen|https://billc.io
 Xiejiadong|http://xiejiadong.com/
-
-> Old Doc:
-
-Want to know how to make the timetable? 
-http://xiejiadong.com/?p=419
