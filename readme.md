@@ -1,7 +1,7 @@
 # ECNU-class2ics
 
-基于原项目：(https://github.com/billchen2k/ECNU-class2ics)
-做了一些修改以适配教务系统的更新，并使原代码能在Windows平台上顺利运行。还更新了学校的新时间表。
+基于原项目：(https://github.com/billchen2k/ECNU-class2ics)  
+做了一些修改以适配教务系统的更新，并使原代码能在Windows平台上顺利运行。还更新了学校的新时间表。  
 自动识别验证码功能出现问题，暂时需要手动输入验证码。
 
 ## What's this
