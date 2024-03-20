@@ -125,8 +125,8 @@ def DefineIDS():
 	
 def GetSemesterID():
 	"semester.id: 2018-2019学年度上学期为705，每向前/向后一个学期就增加/减少32."
-	year = input('请输入学年起始年份（例如要获取的课程表在 2018 - 2019 学年，请输入 2018；稍后将选择具体学期）：')
-	sem = input('请选择学期 ：')
+	year = input('请输入学年起始年份（例如要获取的课程表在 2023 - 2024 学年，请输入 2023；稍后将选择具体学期）：')
+	sem = input('请选择学期 （1：第一学期 2：第二学期 3：暑假小学期）：')
 	id = 705 + (int(year) - 2018) * 96 + (int(sem) - 1) * 32
 	# web = requests.get('https://billc.io/conf-ecnu-class2ics/')
 	# elements = [1] 第一学期 [2] 第二学期 [3] 暑假小学期etree.HTML(web.content)
@@ -134,7 +134,7 @@ def GetSemesterID():
 	# if (len(id) == 0):
 	# 	ErrorExit('GetSemesterID()')
 	# print('semster.id:', id[0])
-	print("该学期对应的 semester.id 为：" + str(id));
+	print("该学期对应的 semester.id 为：" + str(id))
 	return id
 
 def ErrorExit(info):
@@ -201,14 +201,14 @@ def TableSolver():
 		temp = []
 		temp.extend(re.findall(r'"([^"]+)"', one[0]))
 		del temp[4], temp[2], temp[0]
-		print('breakpoint_1',temp)
+		# print('breakpoint_1',temp)
 		weekData = WeekProcessor(temp[3])
 		del temp[3]
 		temp.extend(weekData)
-		print('breakpoint_2',temp)
+		# print('breakpoint_2',temp)
 		temp.extend(one[1])
 		processed.append(temp)
-		print('breakpoint_3',temp)
+		# print('breakpoint_3',temp)
 		print(temp[1])
 	return processed
 

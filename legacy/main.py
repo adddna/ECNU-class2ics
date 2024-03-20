@@ -225,7 +225,7 @@ def basicSetting():
 	info = "欢迎使用课程表生成工具。\n接下来你需要设置一些基础的信息方便生成数据\n"
 	print (info)
 	
-	info = "请设置第一周的星期一日期(如：20160905):\n"
+	info = "请设置第一周的星期一日期(如：20240226):\n"
 	firstWeekDate = input(info)
 	checkInput(checkFirstWeekDate, firstWeekDate)
 	
@@ -251,7 +251,7 @@ def basicSetting():
 def checkInput(checkType, input):
 	if(checkType == checkFirstWeekDate):
 		if (checkFirstWeekDate(input)):
-			info = "输入有误，请重新输入第一周的星期一日期(如：20160905):\n"
+			info = "输入有误，请重新输入第一周的星期一日期(如：20240226):\n"
 			firstWeekDate = input(info)
 			checkInput(checkFirstWeekDate, firstWeekDate)
 		else:

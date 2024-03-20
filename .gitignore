@@ -1,5 +1,3 @@
-/.idea/*
-/static/temp
-/static/output
-data/login4_decrypted.js
-/static/fonts/
+legacy/dist/
+legacy/build/
+legacy/crawller.spec
