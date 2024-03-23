@@ -5,12 +5,17 @@ import sys
 import time, datetime
 import json
 from random import Random
+import os
 
 __author__ = 'Xiejiadong'
 __site__ = 'xiejiadong.com'
 
 # 生成的ics文件中的UID
 __user__ = 'ZhangZean'
+
+# 代码的绝对路径（生成exe文件时用）
+absolute_path = os.getcwd()+ '\\legacy'
+# absolute_path = sys.path[0]
 
 checkFirstWeekDate = 0
 checkReminder = 1
@@ -39,7 +44,7 @@ def start():
 
 
 def save(string):
-     f = open(sys.path[0] + "/class.ics", 'wb')
+     f = open(absolute_path + "\\class.ics", 'wb')
      f.write(string.encode("utf-8"))
      f.close()
 
@@ -150,7 +155,7 @@ def uniteSetting():
 
 def setClassTime():
 	data = []
-	with open(sys.path[0] + '/conf_classTime.json', 'r', encoding='utf-8') as f:
+	with open(absolute_path + '\\data\\conf_classTime.json', 'r', encoding='utf-8') as f:
 		data = json.load(f)
 	global classTimeList
 	classTimeList = data["classTime"]
@@ -158,7 +163,7 @@ def setClassTime():
 	
 def setClassInfo():
 	data = []
-	with open(sys.path[0] + '/conf_classInfo.json', 'r', encoding='utf-8') as f:
+	with open(absolute_path + '\\data\\conf_classInfo.json', 'r', encoding='utf-8') as f:
 		data = json.load(f)
 	global classInfoList
 	classInfoList = data["classInfo"]

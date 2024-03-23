@@ -16,6 +16,7 @@ import platform
 from main import start
 from PIL import Image
 from lxml import etree
+import os
 
 mainurl = 'https://portal1.ecnu.edu.cn/cas/login?service=http%3A%2F%2Fapplicationnewjw.ecnu.edu.cn%2Feams%2Fhome.action'
 tabelurl = 'https://applicationnewjw.ecnu.edu.cn/eams/courseTableForStd!courseTable.action'
@@ -26,19 +27,22 @@ headers = {
 captachaurl = 'https://portal1.ecnu.edu.cn/cas/code'
 s = requests.session()
 ids = 0
-	
+
+# 代码的绝对路径（生成exe文件时用）
+absolute_path = os.getcwd()+ '\\legacy'
+# absolute_path = sys.path[0]
 
 def GetCode():
 	"发送一次新的 get 请求并获取验证码，让用户填写。"
 	print('正在获取验证码...')
 	r = s.get(mainurl, headers=headers)
 	imgraw = s.get(captachaurl)
-	with open(sys.path[0] + '/data/temp.jpg', 'wb+') as f:
+	with open(absolute_path + '\\data\\temp.jpg', 'wb+') as f:
 		f.write(imgraw.content)
-	OpenFile(sys.path[0] + '/data/temp.jpg')
+	OpenFile(absolute_path + '\\data\\temp.jpg')
 	captacha = input('请输入验证码：')
 	# print('正在识别验证码...')
-	# img = Image.open(sys.path[0] + '/data/temp.jpg')
+	# img = Image.open(absolute_path + '\\data\\temp.jpg')
 	# captacha = pytesseract.image_to_string(img)
 	return captacha
 
@@ -61,7 +65,7 @@ def OpenFile(filedir):
 
 def GetRSA(username, password):
 	# 获取 des.js 里的内容
-	with open(sys.path[0] + '/data/des.js') as f:
+	with open(absolute_path + '\\data\\des.js') as f:
 		line = f.readline()
 		jsstr = ''
 		while line:
@@ -245,7 +249,7 @@ def WeekProcessor(raw):
 
 def DumpJson(classList):
 	classInfo = {'classInfo': []}
-	with open(sys.path[0] + '/conf_classTime.json', 'r', encoding='utf-8') as f:
+	with open(absolute_path + '\\data\\conf_classTime.json', 'r', encoding='utf-8') as f:
 		classTime = json.load(f)
 	classTimes = []
 	# 获取 conf_classTime.json 中的配置文件，并和 classList 的配置匹配
@@ -270,7 +274,7 @@ def DumpJson(classList):
                     'classTime': classTimes.index(aClass[7]) + 1,
                     'classroom': aClass[2]}
 		classInfo['classInfo'].append(classData)
-	with open(sys.path[0] + '/conf_classInfo.json', 'w+', encoding='utf-8') as f:
+	with open(absolute_path + '\\data\\conf_classInfo.json', 'w+', encoding='utf-8') as f:
 		json.dump(classInfo, f, indent=4, ensure_ascii=False)
 	pass
 

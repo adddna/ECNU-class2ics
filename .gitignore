@@ -1,7 +1,7 @@
 legacy/dist/
 legacy/build/
+legacy/__pycache__/
 legacy/crawller.spec
 legacy/class.ics
-legacy/conf_classInfo.json
 legacy/data/temp.jpg
-legacy/__pycache__/
+legacy/data/conf_classInfo.json
